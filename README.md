@@ -2,10 +2,10 @@
 Tools for fantasy basketball
 
 TODO:
-- ~~Learn how to parse commandline input
-  - ~~Player data
-  - ~~Weekly totals
-- ~~Learn how to output to a file
+- ~~Learn how to parse commandline input~~
+  - ~~Player data~~
+  - ~~Weekly totals~~
+- ~~Learn how to output to a file~~
 - Write basic data entry program
   - Prompt for specific players vs player name matching via substring
   - Player name updating
