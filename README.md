@@ -4,12 +4,15 @@ Tools for fantasy basketball
 TODO:
 - ~~Learn how to parse commandline input~~
   - ~~Player data~~
-  - ~~Weekly totals~~
+  - Weekly totals
 - ~~Learn how to output to a file~~
-- Write basic data entry program
+- Write basic data entry/storage program
   - ~~Player name matching via substring~~
-  - Player name updating
-  - ~~Team name matching via substring~~
+  - ~~Player name updating~~
+  - ~~Player stat updating~~
+  - Team name matching via substring
+  - Team performance history storage
+  - Team performance history addition
 - ~~Learn how to read from that file~~
 - Write basic data presentation program
   - Calculate each fantasy team's average performance and show how I compare in each category
