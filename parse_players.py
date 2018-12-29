@@ -49,21 +49,62 @@ def write_player_data(names, data):
         file.write(','.join(stringify(data[player])) + "\n")
     file.close()
 
+def update_roster(player_names, player_data):
+    print "Who are you dropping?"
+    player_to_drop = raw_input()
+    if player_to_drop == "":
+        print "Cancelling."
+        return
+    player_to_drop = match_player(player_to_drop, player_names)
+    if player_to_drop is None:
+        print "Player not found. Cancelling."
+        return
+    print "Dropping " + player_to_drop + ". Who are you adding?"
+    player_to_add = raw_input()
+    if player_to_add == "":
+        print "Cancelling."
+        return
+    print "Adding " + player_to_add + ". Press enter again to confirm, do anything else to cancel."
+    if raw_input() != "":
+        print "Cancelling."
+        return
+
+    player_names.remove(player_to_drop)
+    del player_data[player_to_drop]
+    player_names += [player_to_add]
+    player_data[player_to_add] = []
+
+    print "Dropped " + player_to_drop + ", added " + player_to_add + "."
+    return
+
+def update_stats(player_names, player_data):
+    while True:
+        print "Enter player to update:"
+        player_name = raw_input()
+        if player_name == "":
+            return
+        player_name = match_player(player_name, player_names)
+        if player_name is None:
+            print "Player not found. Try again."
+            continue
+        statline = parse_input(player_name)
+        if statline is not None:
+            player_data[player_name] = statline
+
 player_names, player_data = read_player_data()
 
-print player_names
+print "Your roster: " + ', '.join(player_names)
+print "What would you like to do?"
+print "1. Update player data"
+print "2. Modify roster"
 
-while True:
-    print "Enter player"
-    player_name = raw_input()
-    if player_name == "":
-        break
-    player_name = match_player(player_name, player_names)
-    if player_name is None:
-        print "Invalid player. Try again."
-        continue
-    statline = parse_input(player_name)
-    if statline is not None:
-        player_data[player_name] = statline
+option = raw_input()
+
+if option == "1":
+    update_stats(player_names, player_data)
+elif option == "2":
+    update_roster(player_names, player_data)
 
 write_player_data(player_names, player_data)
+
+print "Goodbye!"

@@ -1,4 +1,4 @@
-Nikola Jokic,Eric Bledsoe,Shai Gilgeous-Alexander,Kris Dunn,Kelly Oubre Jr,Serge Ibaka,Wendell Carter Jr,Kemba Walker,Marvin Williams,T. J. Warren,Jonathan Isaac,Draymond Green,Robert Covington
+Nikola Jokic,Eric Bledsoe,Shai Gilgeous-Alexander,Kris Dunn,Kelly Oubre Jr,Serge Ibaka,Wendell Carter Jr,Kemba Walker,Marvin Williams,T. J. Warren,Draymond Green,Jonathan Isaac,Robert Covington
 
 
 
@@ -11,4 +11,4 @@ Nikola Jokic,Eric Bledsoe,Shai Gilgeous-Alexander,Kris Dunn,Kelly Oubre Jr,Serge
 
 
 
-10.8,0.434,3.7,0.773,6.3,0.347,14.3,6.2,1.7,1.9,1.0,1.6
+
