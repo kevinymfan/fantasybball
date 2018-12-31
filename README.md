@@ -8,7 +8,7 @@ TODO:
 - ~~Learn how to output to a file~~
 - Write basic data entry program
   - ~~Player name matching via substring~~
-  - Player name updating
+  - ~~Player name updating~~
   - ~~Team name matching via substring~~
 - ~~Learn how to read from that file~~
 - Write basic data presentation program
@@ -18,6 +18,7 @@ TODO:
   - Show player average stats, basic info, and impact in each category, and the strengths and weaknesses of my current roster
   - Show record of trade proposals and results
   - For given (preset) punts, show value difference for players on my roster and watchlist plus my notes on them
+  - Show player's schedule by week
 - Learn how to get NBA data from the web, and replace manual data entry with this
   - Periodically download and parse NBA JSON files?
   - Access Yahoo Fantasy API?

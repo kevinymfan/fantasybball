@@ -1,0 +1,15 @@
+Kemba Walker,Eric Bledsoe,Kris Dunn,Shai Gilgeous-Alexander,Serge Ibaka,Wendell Carter Jr,Robert Covington,T. J. Warren,Marvin Williams,Jonathan Isaac,Nikola Jokic,Draymond Green,Kelly Oubre Jr,Tomas Satoransky
+Kemba Walker,PG,CHA
+Eric Bledsoe,PG/SG,MIL
+Kris Dunn,PG/SG,CHI
+Shai Gilgeous-Alexander,PG/SG,LAC
+Serge Ibaka,PF/C,TOR
+Wendell Carter Jr.,C,CHI
+Robert Covington,SF/PF,MIN
+T. J. Warren,SF/PF,PHO
+Marvin Williams,SF/PF,CHA
+Jonathan Isaac,SF/PF,ORL
+Nikola Jokic,PF/C,DEN
+Draymond Green,PF/C,GSW
+Kelly Oubre Jr,SF,PHO
+Tomas Satoransky,PG/SG,WAS

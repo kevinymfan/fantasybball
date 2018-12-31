@@ -1,4 +1,5 @@
-PLAYERS_FILE = "players.txt"
+PLAYER_STATS_FILE = "player_stats.txt"
+PLAYER_DATABASE_FILE = "player_database.txt"
 
 def match_player(prefix, players):
     for player in players:
@@ -34,7 +35,7 @@ def stringify(stats):
     return stats_str
 
 def read_player_data():
-    file = open(PLAYERS_FILE, "r")
+    file = open(PLAYER_STATS_FILE, "r")
     players = file.readline()[:-1].split(',')
     player_stats = {}
     for player in players:
@@ -43,7 +44,7 @@ def read_player_data():
     return players, player_stats
 
 def write_player_data(names, data):
-    file = open(PLAYERS_FILE, "w")
+    file = open(PLAYER_STATS_FILE, "w")
     file.write(','.join(names) + "\n")
     for player in names:
         file.write(','.join(stringify(data[player])) + "\n")
@@ -64,7 +65,34 @@ def update_roster(player_names, player_data):
     if player_to_add == "":
         print "Cancelling."
         return
-    print "Adding " + player_to_add + ". Press enter again to confirm, do anything else to cancel."
+
+    file = open(PLAYER_DATABASE_FILE, "r")
+    players = file.readlines()
+    file.close()
+    player_name_list = players[0][:-1].split(',')
+
+    name = match_player(player_to_add, player_name_list)
+    if name is not None:
+        player_to_add = name
+
+    if player_to_add in player_name_list:
+        index = player_name_list.index(player_to_add) + 1
+        info = players[index][:-1].split(',')
+        position = info[1]
+        team = info[2]
+    else:
+        print "What position?"
+        position = raw_input()
+        if position == "":
+            print "Cancelling."
+            return
+        print "Which team?"
+        team = raw_input()
+        if team == "":
+            print "Cancelling."
+            return
+    print "Adding " + player_to_add + ", " + team + " " + position + ". " + "Press enter again to confirm, do anything else to cancel."
+
     if raw_input() != "":
         print "Cancelling."
         return
@@ -73,6 +101,14 @@ def update_roster(player_names, player_data):
     del player_data[player_to_drop]
     player_names += [player_to_add]
     player_data[player_to_add] = []
+
+    if player_to_add not in player_name_list:
+        players[0] = ','.join(player_name_list + [player_to_add]) + "\n"
+        players += ','.join([player_to_add, position, team]) + "\n"
+        file = open(PLAYER_DATABASE_FILE, "w")
+        for line in players:
+            file.write(line)
+        file.close()
 
     print "Dropped " + player_to_drop + ", added " + player_to_add + "."
     return
